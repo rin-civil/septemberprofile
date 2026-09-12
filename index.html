@@ -12,5 +12,57 @@
     <p>Engineering Mechanics. This line is added 253.</p>
   <h1>This is a Heading</h1>
 
+  
+<!-- Simple scrolling text -->
+<marquee behavior="scroll" direction="left" scrollamount="5">
+    This is scrolling text using the &lt;marquee&gt; tag.
+</marquee>
+
+<!-- Bounce effect -->
+<marquee behavior="alternate" direction="right" scrollamount="8">
+    This text bounces back and forth.
+</marquee>
+
+</body>
+</html>
+Attributes:
+
+behavior: scroll, slide, or alternate
+direction: left, right, up, down
+scrollamount: speed (higher = faster)
+scrolldelay: delay between movements (in ms)
+2. Modern CSS Alternative (Recommended)
+Html
+
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Marquee</title>
+    <style>
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="marquee">
+    <span>This is scrolling text using CSS animation (HTML5 safe).</span>
+</div>
+
+
 </body>
 </html>
